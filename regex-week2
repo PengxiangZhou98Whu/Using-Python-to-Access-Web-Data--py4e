@@ -1,0 +1,10 @@
+import re
+hand = open('actual-regex.txt')
+numlist = list()
+for line in hand:
+    line = line.rstrip()
+    stuff = re.findall('[0-9]+', line)
+    if len(stuff) == 0 :  continue
+    for n in stuff:
+        numlist.append(int(n))
+print(sum(numlist))
